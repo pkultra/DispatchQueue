@@ -1,0 +1,3 @@
+/home/pkultra/Projects/DispatchQueue/CMakeFiles/edit_cache.dir
+/home/pkultra/Projects/DispatchQueue/CMakeFiles/rebuild_cache.dir
+/home/pkultra/Projects/DispatchQueue/CMakeFiles/DispatchQueue.dir

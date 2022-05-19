@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pkultra/Projects/DispatchQueue/main.cpp
+iostream
+-
+DispatchQueue.hpp
+-
+
+include/DispatchQueue.hpp
+thread
+-
+mutex
+-
+condition_variable
+-
+deque
+-
+functional
+-
+vector
+-
+
