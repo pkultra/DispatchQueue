@@ -19,10 +19,9 @@ public:
 
 	DispatchQueue(size_t numThreads = 1);
 
-	template <typename ... CB>
-	void dispatch(CB&& ... cb)
+	void dispatch(auto&& ... cb)
 	{
-		(dispatchImpl(std::forward<CB>(cb)), ...);
+		(dispatchImpl(std::forward<decltype(cb)>(cb)), ...);
 	}
 
 	~DispatchQueue();
@@ -30,11 +29,10 @@ public:
 private:
 	void doDispatch();
 
-	template<typename CB>
-	void dispatchImpl(CB&& cb)
+	void dispatchImpl(auto&& cb)
 	{
 		std::lock_guard lg(mutex_);
-		callbackQueue_.emplace_back(std::forward<CB>(cb));
+		callbackQueue_.emplace_back(std::forward<decltype(cb)>(cb));
 		cv_.notify_one();
 	}
 
